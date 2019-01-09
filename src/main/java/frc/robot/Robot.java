@@ -25,12 +25,9 @@ import frc.robot.util.LogitechF310;
  */
 @SuppressWarnings("unchecked")
 public class Robot extends TimedRobot {
-  private static final String kDefaultAuto = "Default";
-  private static final String kCustomAuto = "My Auto";
   private RobotConfigReader robotConfigReader;
   private AttachmentsReader attachmentsReader;
   private LogitechF310 gamepad1;
-  private LogitechF310 gamepad2;
 
   public DriveSysReader driveSysReader;
   public DriveSystem driveSys;
@@ -53,7 +50,6 @@ public class Robot extends TimedRobot {
     }
 
     gamepad1 = new LogitechF310(0);
-    gamepad2 = new LogitechF310(1);
   }
 
   /**
@@ -82,7 +78,7 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void autonomousInit() {
-    
+
   }
 
   /**
