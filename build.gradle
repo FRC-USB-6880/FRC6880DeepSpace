@@ -50,7 +50,7 @@ repositories {
 dependencies {
     compile wpi.deps.wpilib()
     compile wpi.deps.vendor.java()
-    compile fileTree(include: ['*.jar'], dir: 'lib')
+    compile fileTree(include: ['*.jar'], dir: 'libs')
     nativeZip wpi.deps.vendor.jni(wpi.platforms.roborio)
     nativeDesktopZip wpi.deps.vendor.jni(wpi.platforms.desktop)
     testCompile 'junit:junit:4.12'
