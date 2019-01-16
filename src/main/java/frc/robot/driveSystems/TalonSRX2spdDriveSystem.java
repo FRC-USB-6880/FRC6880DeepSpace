@@ -33,11 +33,11 @@ public class TalonSRX2spdDriveSystem implements DriveSystem {
     }
 
     public double getEncoderDist(){
-
+        return (leftEncoder.getDistance()+rightEncoder.getDistance());
     }
 
     public void setLowSpeed(){
-
+        
     }
     public void setHiSpeed(){
 
