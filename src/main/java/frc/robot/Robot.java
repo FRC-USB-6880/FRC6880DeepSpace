@@ -31,7 +31,7 @@ public class Robot extends TimedRobot {
 
   public DriveSysReader driveSysReader;
   public DriveSystem driveSys;
-
+  public double robotWidth;
   /**
    * This function is run when the robot is first started up and should be
    * used for any initialization code.
@@ -39,7 +39,7 @@ public class Robot extends TimedRobot {
   @Override
   public void robotInit() {
     robotConfigReader = new RobotConfigReader("robotName");
-
+    robotWidth = robotConfigReader.getRobotWidth();
     driveSysReader = new DriveSysReader(robotConfigReader.getDriveSysName());
     driveSys = createDriveSystem(robotConfigReader.getDriveSysName());
 

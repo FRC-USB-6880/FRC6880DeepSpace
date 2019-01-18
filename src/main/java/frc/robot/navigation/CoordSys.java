@@ -16,12 +16,12 @@ public class CoordSys {
         prevPos[2] = pos[2] = angle;
     }
 
-    public void updatePose(){
+    public void updatePos(){
         double distance = driveSys.getEncoderDist();
         double distanceLeft = driveSys.getLeftEncoderDist();
         double distanceRight = driveSys.getRightEncoderDist();   
         
-        pos[2] = prevPos[2] + ((distanceRight - distanceLeft) / robot.distanceBetweenWheels);
+        pos[2] = prevPos[2] + ((distanceRight - distanceLeft) / robot.robotWidth);
         pos[0] = prevPos[0] + Math.cos(prevPos[2]);
         pos[1] = prevPos[1] + distance * Math.sin(prevPos[2]);
 
