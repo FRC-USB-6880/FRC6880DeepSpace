@@ -57,7 +57,7 @@ public class JsonReader{
         JsonReader.attachmentsFile = baseDir + "attachments.json";
         JsonReader.navigationFile = baseDir + "navigation_options.json";
         JsonReader.autonomousOptFile = baseDir + "autonomous_options.json";
-        JsonReader.driveTrainsFile = baseDir + "drive_trains.json";
+        JsonReader.driveTrainsFile = baseDir + "driveSystems.json";
         JsonReader.autonomousRedDir = baseDir + "autonomous/red/";
         JsonReader.autonomousBlueDir = baseDir + "autonomous/blue/";
     }
