@@ -32,7 +32,6 @@ public class Robot extends TimedRobot {
 
   public DriveSysReader driveSysReader;
   public DriveSystem driveSys;
-  public double robotWidth;
   /**
    * This function is run when the robot is first started up and should be
    * used for any initialization code.
