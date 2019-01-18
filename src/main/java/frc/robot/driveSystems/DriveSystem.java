@@ -11,4 +11,5 @@ public interface DriveSystem{
     boolean isMoving();
     Gears getCurGear();
     void changeMultiplier(double multiplier);
+    double getWidth();
 }
