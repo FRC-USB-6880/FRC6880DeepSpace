@@ -1,6 +1,7 @@
 package frc.robot.driveSystems;
 
 import frc.robot.Robot;
+import frc.robot.jsonReaders.DriveSysReader;
 import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.SpeedControllerGroup;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
@@ -10,16 +11,22 @@ public class TalonSRX2spdDriveSystem implements DriveSystem {
     Encoder leftEncoder;
     Encoder rightEncoder;
     DifferentialDrive drive;
-    SpeedControllerGroup leftMotor;
-    SpeedControllerGroup rightMotor;
+    SpeedControllerGroup leftMotors;
+    SpeedControllerGroup rightMotors;
     boolean isMoving;
     double multiplier;
-
-    public enum Gears {LOW, HIGH}
+    private Gears curGear;
+    DriveSysReader jsonReader;
+    private double width;
 
 
     public TalonSRX2spdDriveSystem (){
-        drive = new DifferentialDrive(leftMotor, rightMotor);
+        jsonReader = new DriveSysReader("TalonSRX2spdDriveSystem");
+        
+        drive = new DifferentialDrive(leftMotors, rightMotors);
+        curGear = Gears.LOW;
+
+        width = jsonReader.getWidth();
     }
 
     public void tankDrive(double leftSpeed, double rightSpeed){
@@ -39,8 +46,16 @@ public class TalonSRX2spdDriveSystem implements DriveSystem {
         return (leftEncoder.getDistance()+rightEncoder.getDistance());
     }
 
-    public void setLowSpeed(){
+    public double getLeftEncoderDist(){
+        return leftEncoder.getDistance();
+    }
 
+    public double getRightEncoderDist(){
+        return rightEncoder.getDistance();
+    }
+
+    public void setLowSpeed(){
+        
     }
     public void setHiSpeed(){
 
@@ -53,5 +68,8 @@ public class TalonSRX2spdDriveSystem implements DriveSystem {
     }
     public void changeMultiplier(double multiplier){
         this.multiplier = multiplier;
+    }
+    public double getWidth(){
+        return width;
     }
 }

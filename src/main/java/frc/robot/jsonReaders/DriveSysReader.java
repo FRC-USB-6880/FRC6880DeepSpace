@@ -104,4 +104,8 @@ public class DriveSysReader extends JsonReader {
         ratio = getDouble(baseObj, key);
         return ratio;
     }
+
+    public double getWidth(){
+        return getDouble(baseObj, "width");
+    }
 }

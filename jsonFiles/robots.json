@@ -1,0 +1,10 @@
+{
+    "2019-Robot" : {
+        "driveTrain" : "TalonSRX2spdDriveSystem",
+        "navigation" : "IMU_DriveSysEncoders",
+        "autonomousPosition" : "level1",
+        "autonomousOption" : "teleop-driverAssist",
+        "attachments" : [],
+        "tankDriveStationConfig" : true
+    }
+}

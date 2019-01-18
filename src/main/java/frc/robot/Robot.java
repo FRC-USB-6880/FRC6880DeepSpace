@@ -11,6 +11,7 @@ import java.util.ArrayList;
 
 import edu.wpi.first.wpilibj.TimedRobot;
 import frc.robot.driveSystems.DriveSystem;
+import frc.robot.driveSystems.TalonSRX2spdDriveSystem;
 import frc.robot.jsonReaders.AttachmentsReader;
 import frc.robot.jsonReaders.DriveSysReader;
 import frc.robot.jsonReaders.RobotConfigReader;
@@ -94,6 +95,10 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void teleopPeriodic() {
+    double speed = gamepad1.leftStickY();
+    double direction = gamepad1.rightStickX();
+
+    driveSys.arcadeDrive(speed, direction);
   }
 
   /**
@@ -106,6 +111,8 @@ public class Robot extends TimedRobot {
   private DriveSystem createDriveSystem(String name){
     switch(name){
       //Each case corresponds to a drivesys class
+      case "TalonSRX2spdDriveSystem":
+        return new TalonSRX2spdDriveSystem();
     }
     return null;
   }
