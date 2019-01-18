@@ -39,6 +39,7 @@
             "encoderType" : "GreyHill-63R128",
             "encoderChannels" : [2,3]
          },
-        "wheelType" : "6inch-higrip-wheel-grey"
+        "wheelType" : "6inch-higrip-wheel-grey",
+        "width" : 28.0,
     }
 }

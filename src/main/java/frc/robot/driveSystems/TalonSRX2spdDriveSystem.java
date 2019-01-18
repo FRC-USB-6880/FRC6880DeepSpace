@@ -17,6 +17,7 @@ public class TalonSRX2spdDriveSystem implements DriveSystem {
     double multiplier;
     private Gears curGear;
     DriveSysReader jsonReader;
+    private double width;
 
 
     public TalonSRX2spdDriveSystem (){
@@ -24,6 +25,8 @@ public class TalonSRX2spdDriveSystem implements DriveSystem {
         
         drive = new DifferentialDrive(leftMotors, rightMotors);
         curGear = Gears.LOW;
+
+        width = jsonReader.getWidth();
     }
 
     public void tankDrive(double leftSpeed, double rightSpeed){
@@ -65,5 +68,8 @@ public class TalonSRX2spdDriveSystem implements DriveSystem {
     }
     public void changeMultiplier(double multiplier){
         this.multiplier = multiplier;
+    }
+    public double getWidth(){
+        return width;
     }
 }

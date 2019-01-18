@@ -1,6 +1,5 @@
 {
     "2019-Robot" : {
-        "robotWidth" : 28.0,
         "driveTrain" : "TalonSRX2spdDriveSystem",
         "navigation" : "IMU_DriveSysEncoders",
         "autonomousPosition" : "level1",
