@@ -15,6 +15,9 @@ public class TalonSRX2spdDriveSystem implements DriveSystem {
     boolean isMoving;
     double multiplier;
 
+    public enum Gears {LOW, HIGH}
+
+
     public TalonSRX2spdDriveSystem (){
         drive = new DifferentialDrive(leftMotor, rightMotor);
     }
@@ -37,7 +40,7 @@ public class TalonSRX2spdDriveSystem implements DriveSystem {
     }
 
     public void setLowSpeed(){
-        
+
     }
     public void setHiSpeed(){
 
