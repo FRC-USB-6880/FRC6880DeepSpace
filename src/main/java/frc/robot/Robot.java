@@ -23,7 +23,7 @@ import frc.robot.util.LogitechF310;
  * creating this project, you must also update the build.gradle file in the
  * project.
  */
-@SuppressWarnings("unchecked")
+// @SuppressWarnings("unchecked")
 public class Robot extends TimedRobot {
   private RobotConfigReader robotConfigReader;
   private AttachmentsReader attachmentsReader;
